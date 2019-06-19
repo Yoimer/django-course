@@ -1,0 +1,6 @@
+# Don't track content of these folders
+djangoair-v0/djangoair/__pycache__/
+
+# Compiled source #
+###################
+*.pyc
