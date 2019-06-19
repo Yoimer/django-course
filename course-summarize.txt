@@ -1,0 +1,29 @@
+########################## start whole project in django
+django-admin startproject projectname
+django-admin startproject mysite
+
+__init__.py (mysite folder is made of python packages)
+
+manage.py (python script that can be used to performe useful operations)
+
+settings.py (file that has all of the settings for our web application, like time the application should be in, other
+applications installed inside, which sort of database we should use )
+
+url.py( acts as the file that takes care of what url (what route) user can go when using the web application
+
+wsgi.py (it's the file for uploading all the locals server to a public server.)
+
+########################## create app
+inside of "mysite" folder (it has the manage.py file and another "mysite" folder), type:
+
+python manage.py startapp appname (where appname is our case is hello)
+python manage.py startapp hello
+
+inside "hello" folder there are a bunch of files.
+
+views.py is analagous to what app.py does in Flask
+it is where we write the code which decides what the user sees when they go to a particular route
+
+in Django all view functions take an argument which is the object call requests
+request in this case means the arguments we are passing in the requests, like in Flask
+which sort of cookie for example
