@@ -27,3 +27,53 @@ it is where we write the code which decides what the user sees when they go to a
 in Django all view functions take an argument which is the object call requests
 request in this case means the arguments we are passing in the requests, like in Flask
 which sort of cookie for example
+
+########################## start server 
+on "mysite" folder 
+python manage.py runserver
+
+
+########################## models file
+this is the place where we're going to define the classes which defines the
+data type for the db. Quite similar what we did with sql alchemy in Flask
+
+
+########################## ensuring th existence of the models file
+go to the settings file for the application, in this case the application is (djangoair-v0),
+then go to the INSTALLED APPS section
+and type : 'flights.apps.FlightsConfig',
+the list should look like this:
+# Application definition
+
+INSTALLED_APPS = [
+    'flights.apps.FlightsConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+########################## migrations
+django automatically detects anytime that
+as soon as we make a change in our model file, then automatically
+generates the sql code necessary to run in our db and allow those changes to happen in our db.
+
+command to create the  flights db table
+inside the project folder (djangoair-v0)
+
+python manage.py makemigrations
+
+console shows something like this :
+
+''' Migrations for 'flights':
+  flights\migrations\0001_initial.py
+    - Create model Flight '''
+
+(out of curiosity)in order to see the sql code from the 0001_initial.py
+on project folder (djangoair-v0), issue this command
+
+python manage.py sqlmigrate app migration
+
+python manage.py sqlmigrate flights 0001
