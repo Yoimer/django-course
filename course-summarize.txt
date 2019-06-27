@@ -77,3 +77,45 @@ on project folder (djangoair-v0), issue this command
 python manage.py sqlmigrate app migration
 
 python manage.py sqlmigrate flights 0001
+
+apply migration
+
+on project folder (djangoair-v0) issue the next command
+
+python manage.py migrate
+
+########################################### creating a new flight using ipython
+install ipython in the virtualenv
+pip install ipython
+issue the command python manage.py shell -i ipython
+once in ipython console:
+
+from flights.models import Flight
+f = Flight(origin="New York", destination="London", duration=415) //add a flight
+f.save() // this is the equivalent commit operation in Flask ORM
+(query for something in the db) Flight.objects.all
+it returns: <QuerySet[<Flight: Flight object(1)>]> (QuerySet is a fancy list that has aditional features to it)
+
+Let's make an easier way to see what that QuerySet has inside
+go to djangoair-v0/flights/models.py
+
+add this code:
+
+def __str__(self):
+    return f"{self.id} - {self.origin} to {self.destination}"
+
+__str__: works for any class NOT only  classes in django
+and what it does is define what the object should look like
+when it's printed out to a screen. It applies when it's printed
+to a terminal or to a HTML.
+
+show first value in db
+f = Flight.object.first()
+
+accessing to objects
+f.origin
+f.id
+f.destination
+
+delete the flight
+f.delete()
