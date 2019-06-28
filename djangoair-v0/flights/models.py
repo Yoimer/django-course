@@ -18,8 +18,8 @@ class Flight(models.Model):
     # the related_name (departure) does is: If I have an airport and I want to access all of the flights
     # who origin is that airport I can use the name departure to be able to access to that
 
-    origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departure")
-    destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrival")
+    origin = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="departures")
+    destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
     duration = models.IntegerField()
 
     def __str__(self):

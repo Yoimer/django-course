@@ -119,3 +119,29 @@ f.destination
 
 delete the flight
 f.delete()
+
+Let's experiment with the Airport and FLights model now
+
+Before experimenting, remember:
+
+on djangoair-v0 issue the command 
+python manage.py makemigrations
+(this is for adding or updating functions inside of a model, in our case we added Airport on our model.py)
+
+on djangoair-v0 run 
+python manage.py migrate (this is to apply the change to your data)
+
+from flights.models import Airport, Flight
+jfk = Airport(code = "JFK", city = "New York City")
+lhr = Airport(code = "LHR", city = "London")
+jfk.save()
+lhr.save()
+f = Flight(origin = jfk, destination = lhr, duration = 415)
+f.save()
+
+f.origin (<Airport: New York City (JFK)>)
+f.origin.code ('JFK')
+f.origin.city ('New York City')
+
+jfk.departures.all() (<QuerySet [<Flight: 2 - New York City (JFK) to London (LHR)>]>)
+this queries for all of the departures that are departing from jfk
