@@ -145,3 +145,23 @@ f.origin.city ('New York City')
 
 jfk.departures.all() (<QuerySet [<Flight: 2 - New York City (JFK) to London (LHR)>]>)
 this queries for all of the departures that are departing from jfk
+
+########################################### creating a super user
+This user has full access to the db
+
+the command is:
+inside of (djangoair-v0)
+python manage.py createsuperuser
+
+Username (leave blank to use 'yoimer'):
+Email address: ydrf19@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+
+how to access to the admin panel
+inside of (djangoair-v0)
+
+python manage.py runserver 
+
+on browser type http://127.0.0.1:8000/admin/
