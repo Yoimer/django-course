@@ -1,6 +1,9 @@
 # Don't track content of these folders
 djangoair-v0/djangoair/__pycache__/
 djangoair-v0/flights__pycache__/
+djangoair-v1/env/
+djangoair-v1/djangoair/__pycache__/
+djangoair-v1/flights__pycache__/
 
 # Compiled source #
 ###################
