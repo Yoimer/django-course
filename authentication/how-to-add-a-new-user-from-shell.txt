@@ -1,0 +1,16 @@
+install ipython in the virtualenv
+pip install ipython
+after activating virtual env , issue the command python manage.py shell -i ipython
+once in ipython console:
+
+# library than handles user authetication
+from django.contrib.auth.models import User
+
+# create user
+user = User.objects.create_user("alice", "alice@something.com", "alice1234")
+
+# change user name
+user.first_name = "Alice"
+
+user.save()
+
